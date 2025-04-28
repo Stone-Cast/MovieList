@@ -5,7 +5,7 @@ import { useMovieStore } from "@/store";
 import Image from "next/image";
 
 const MovieOverview = () => {
-    let movie = useMovieStore((state) => state.movies[0]);
+    const movie = useMovieStore((state) => state.movies[0]);
     console.log(movie);
 
     if (movie) {

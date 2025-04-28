@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { MovieApiResponse, Movie } from "@/types";
+import { useEffect } from "react";
+import { MovieApiResponse } from "@/types";
 import Image from "next/image";
 import { bebasNeue } from "@/app/fonts/fonts";
 import { useMovieStore } from "@/store";
