@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { FormEvent, useState } from "react";
 
 const Input = () => {
@@ -29,12 +30,19 @@ const Input = () => {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="grow ">
                 <input
                     type="text"
-                    className=""
+                    className="hidden md:block w-full py-1 px-2 rounded-2xl border border-black"
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
+                />
+                <Image
+                    src="/search.png"
+                    alt="search_icon"
+                    width={25}
+                    height={25}
+                    className="block md:hidden"
                 />
             </form>
         </>
