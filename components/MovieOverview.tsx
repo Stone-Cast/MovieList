@@ -52,7 +52,6 @@ const MovieOverview = () => {
                                     "https://image.tmdb.org/t/p/original" +
                                     movie.poster_path
                                 }
-                                // className="w-auto h-[150px] sm:h-[250px] md:h-[350px] lg:h-[450px]"
                             />
                         </div>
                         <div className="rounded-2xl overflow-hidden">
@@ -64,7 +63,6 @@ const MovieOverview = () => {
                                     "https://image.tmdb.org/t/p/original" +
                                     movie.backdrop_path
                                 }
-                                // className="w-full h-[150px] sm:h-[250px] md:h-[350px] lg:h-[450px] object-cover"
                                 className="object-contain"
                             />
                         </div>

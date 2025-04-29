@@ -26,7 +26,7 @@ const Menu = () => {
                         key={link.href}
                         href={link.href}
                         className={clsx(
-                            "text-base md:w-auto md:border border-black bg-amber-50 md:rounded-2xl px-1.5 py-1.5 md:py-0.5"
+                            "text-base md:w-auto md:border border-black bg-gray-100 md:rounded-2xl px-1.5 py-1.5 md:py-0.5"
                             // pathname === `${link.href}` &&
                             //     "font-bold underline",
                             // isMenuOn == true

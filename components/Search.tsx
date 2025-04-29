@@ -1,12 +1,22 @@
 "use client";
 
+import { useMovieStore } from "@/store";
+import { MovieApiResponse } from "@/types";
 import clsx from "clsx";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 import { FormEvent, useState } from "react";
 
 const Search = () => {
     const [input, setInput] = useState("");
     const [isSearchOn, setIsSearchOn] = useState(false);
+
+    const setSearchedMovieName = useMovieStore(
+        (state) => state.setSearchedMovieName
+    );
+    const setSearchedMovieResults = useMovieStore(
+        (state) => state.setSearchedResults
+    );
 
     function handleSubmit(e: FormEvent) {
         e.preventDefault();
@@ -26,8 +36,12 @@ const Search = () => {
             options
         )
             .then((res) => res.json())
-            .then((res) => console.log(res))
+            .then((res: MovieApiResponse) => {
+                setSearchedMovieResults(res.results);
+                setSearchedMovieName(input);
+            })
             .catch((err) => console.error(err));
+        redirect("/searchResults");
     }
 
     return (
@@ -40,16 +54,9 @@ const Search = () => {
                         isSearchOn == false && "hidden md:block"
                     )}
                     value={input}
+                    placeholder="Search Movies"
                     onChange={(e) => setInput(e.target.value)}
                 />
-                <span
-                    className={clsx(
-                        "absolute text-base top-[50%] left-[10px] translate-y-[-50%] text-gray-500 max-md:hidden",
-                        `${input}` != "" && "hidden"
-                    )}
-                >
-                    Search movies
-                </span>
                 <Image
                     src="/close.png"
                     alt="close_search"
