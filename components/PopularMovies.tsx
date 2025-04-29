@@ -33,7 +33,7 @@ const PopularMovies = () => {
             setMovies(data.results);
         }
         fetchMovies();
-    }, []);
+    });
 
     return (
         <>

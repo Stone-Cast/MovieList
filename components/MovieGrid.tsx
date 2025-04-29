@@ -1,13 +1,7 @@
 import Image from "next/image";
 import { Movie } from "@/types";
 
-const MovieGrid = ({
-    sectionName,
-    movies,
-}: {
-    sectionName: string;
-    movies: Movie[];
-}) => {
+const MovieGrid = ({ movies }: { sectionName: string; movies: Movie[] }) => {
     return (
         <section className="flex justify-center">
             <div className="max-w-[1550px] w-full px-3">
