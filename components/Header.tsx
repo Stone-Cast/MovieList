@@ -1,11 +1,7 @@
 "use client";
 
-import clsx from "clsx";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import Search from "./Search";
-import Image from "next/image";
-import { useState } from "react";
 import Menu from "./Menu";
 
 const Header = () => {

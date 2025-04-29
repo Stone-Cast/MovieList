@@ -11,12 +11,14 @@ const MovieOverview = () => {
     if (movie) {
         return (
             <section className="relative border text-amber-50 pb-2">
-                <img
+                <Image
                     src={
                         "https://image.tmdb.org/t/p/original/" +
                         movie.backdrop_path
                     }
                     alt="backdrop image"
+                    height={100}
+                    width={100}
                     className="absolute top-0 left-0 -z-2 h-full w-full object-cover"
                 />
                 <div className="absolute top-0 left-0 -z-1 h-full w-full bg-black/50 backdrop-blur-lg"></div>

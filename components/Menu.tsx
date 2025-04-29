@@ -1,11 +1,9 @@
 import clsx from "clsx";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const Menu = () => {
-    const pathname = usePathname();
     const links = [
         { href: "/recent", label: "Recently Watched" },
         { href: "/profile", label: "Profile" },
