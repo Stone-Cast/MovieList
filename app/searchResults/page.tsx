@@ -7,7 +7,7 @@ const SerachResults = () => {
     const movies = useMovieStore((state) => state.searchResults);
     const movieName = useMovieStore((state) => state.searchedMovieName);
 
-    return <MovieGrid movies={movies} sectionName={movieName} />;
+    return <MovieGrid movies={movies} />;
 };
 
 export default SerachResults;
