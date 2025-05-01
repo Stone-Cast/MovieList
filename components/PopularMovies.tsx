@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { MovieApiResponse } from "@/types";
 import { useMovieStore } from "@/store";
 import MovieGrid from "./MovieGrid";
-import { bebasNeue } from "@/app/fonts/fonts";
 import SectionName from "./SectionName";
 
 const PopularMovies = () => {

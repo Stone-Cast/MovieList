@@ -1,4 +1,3 @@
-import { bebasNeue } from "@/app/fonts/fonts";
 import SectionName from "./SectionName";
 
 const Cast = () => {

@@ -6,7 +6,8 @@ import { Movie } from "@/types";
 import Image from "next/image";
 
 const MovieOverview = ({ clickedMovie }: { clickedMovie?: Movie }) => {
-    const movie = clickedMovie || useMovieStore((state) => state.movies[0]);
+    const firstMovie = useMovieStore((state) => state.movies[0]);
+    const movie = clickedMovie || firstMovie;
 
     if (movie) {
         return (
