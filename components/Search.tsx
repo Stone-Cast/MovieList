@@ -4,12 +4,13 @@ import { useMovieStore } from "@/store";
 import { MovieApiResponse } from "@/types";
 import clsx from "clsx";
 import Image from "next/image";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 
 const Search = () => {
     const [input, setInput] = useState("");
     const [isSearchOn, setIsSearchOn] = useState(false);
+    const router = useRouter();
 
     const setSearchedMovieName = useMovieStore(
         (state) => state.setSearchedMovieName
@@ -41,7 +42,7 @@ const Search = () => {
                 setSearchedMovieName(input);
             })
             .catch((err) => console.error(err));
-        redirect("/searchResults");
+        router.push("/searchResults");
     }
 
     return (

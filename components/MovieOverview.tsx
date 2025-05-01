@@ -2,15 +2,15 @@
 
 import { GenreList } from "@/components/GenreList";
 import { useMovieStore } from "@/store";
+import { Movie } from "@/types";
 import Image from "next/image";
 
-const MovieOverview = () => {
-    const movie = useMovieStore((state) => state.movies[0]);
-    console.log(movie);
+const MovieOverview = ({ clickedMovie }: { clickedMovie?: Movie }) => {
+    const movie = clickedMovie || useMovieStore((state) => state.movies[0]);
 
     if (movie) {
         return (
-            <section className="relative border text-amber-50 pb-2">
+            <section className="relative border text-amber-50">
                 <Image
                     src={
                         "https://image.tmdb.org/t/p/original/" +
@@ -21,6 +21,7 @@ const MovieOverview = () => {
                     width={100}
                     className="absolute top-0 left-0 -z-2 h-full w-full object-cover"
                 />
+
                 <div className="absolute top-0 left-0 -z-1 h-full w-full bg-black/50 backdrop-blur-lg"></div>
                 <div className="flex flex-wrap justify-center md:py-3 md:px-7 lg:px-10">
                     <div className="flex justify-between w-full max-w-[1450px] p-1">
@@ -59,6 +60,7 @@ const MovieOverview = () => {
                                 width={600}
                                 height={600}
                                 alt="Movie poster"
+                                priority={true}
                                 src={
                                     "https://image.tmdb.org/t/p/original" +
                                     movie.backdrop_path
@@ -75,7 +77,9 @@ const MovieOverview = () => {
                         </div>
                     </div>
                     <div className="block lg:hidden p-3">
-                        <p className="line-clamp-3">{movie.overview}</p>
+                        <p className={clickedMovie ? "line-clamp-3" : ""}>
+                            {movie.overview}
+                        </p>
                         <GenreList
                             genreIds={movie.genre_ids}
                             className="mt-3"

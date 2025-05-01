@@ -10,6 +10,9 @@ type MovieStore = {
 
     searchResults: Movie[];
     setSearchedResults: (movies: Movie[]) => void;
+
+    clickedMovie: Movie;
+    setClickedMovie: (movie: Movie) => void;
 };
 
 export const useMovieStore = create<MovieStore>((set) => ({
@@ -31,6 +34,29 @@ export const useMovieStore = create<MovieStore>((set) => ({
     setSearchedResults: (movies) => {
         set(() => ({
             searchResults: movies,
+        }));
+    },
+
+    clickedMovie: {
+        id: 0,
+        title: "",
+        original_title: "",
+        overview: "",
+        poster_path: "",
+        backdrop_path: "",
+        release_date: "",
+        vote_average: 0,
+        vote_count: 0,
+        popularity: 0,
+        genre_ids: [],
+        adult: false,
+        video: false,
+        original_language: "",
+    },
+
+    setClickedMovie: (movie) => {
+        set(() => ({
+            clickedMovie: movie,
         }));
     },
 }));

@@ -6,9 +6,12 @@ import Menu from "./Menu";
 
 const Header = () => {
     return (
-        <header className="relative flex justify-center bg-gray-100 px-2 py-2">
+        <header className="sticky top-0 z-20 flex justify-center bg-gray-100 px-2 py-2">
             <div className="w-full max-w-[1550px]  flex justify-between items-center">
-                <Link href="/" className="text-xl md:text-2xl lg:text-3xl">
+                <Link
+                    href="/950387"
+                    className="text-xl md:text-2xl lg:text-3xl"
+                >
                     MovieList
                 </Link>
 

@@ -5,9 +5,9 @@ import { MovieApiResponse } from "@/types";
 import { useMovieStore } from "@/store";
 import MovieGrid from "./MovieGrid";
 import { bebasNeue } from "@/app/fonts/fonts";
+import SectionName from "./SectionName";
 
 const PopularMovies = () => {
-    // const [movies, setMovies] = useState<Movie[]>([]);
     const movies = useMovieStore((state) => state.movies);
     const setMovies = useMovieStore((state) => state.setMovies);
 
@@ -36,12 +36,10 @@ const PopularMovies = () => {
     });
 
     return (
-        <>
-            <span className={`${bebasNeue.className} m-2 text-2xl md:text-4xl`}>
-                Popular Movies
-            </span>
-            <MovieGrid movies={movies} sectionName="Popular Movies" />
-        </>
+        <section className="md:mt-3">
+            <SectionName name="popular movies" />
+            <MovieGrid movies={movies} />
+        </section>
     );
 };
 
